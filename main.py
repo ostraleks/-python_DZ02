@@ -46,17 +46,20 @@
 #  Задайте список из N элементов, заполненных числами из промежутка [-N, N].
 #   Найдите произведение элементов на указанных позициях(не индексах).
 
-# number_elements = int(input("Введите количество элементов: "))
-# pos_first_element = int(input("Введите позицию первого элемента: "))
-# pos_second_element = int(input("Введите позицию второго элемента: "))
-# first_element = -number_elements
-# list = []
-#
-# for i in range(number_elements * 2 + 1):
-#     list += [first_element]
-#     first_element += 1
-# print(list)
-# print(f'Произведение заданных элементов {int(list[pos_first_element-1]) * int(list[pos_second_element-1])}')
+number_elements = int(input("Введите количество элементов: "))
+pos_first_element = int(input("Введите позицию первого элемента: "))
+pos_second_element = int(input("Введите позицию второго элемента: "))
+if pos_first_element > 0 and pos_first_element <= (number_elements * 2 + 1) and pos_second_element > 0 and pos_second_element <= (number_elements * 2 + 1):
+    first_element = -number_elements
+    list = []
+    for i in range(number_elements * 2 + 1):
+        list += [first_element]
+        first_element += 1
+    print(list)
+    print(f'Произведение заданных элементов {int(list[pos_first_element-1]) * int(list[pos_second_element-1])}')
+else:
+    print ('Нет таких элементов списка')
+
 
 
 # 5. ** Реализуйте алгоритм перемешивания списка. Без функции shuffle из модуля random.
@@ -70,3 +73,4 @@
 #     list_out += [rnd]
 #     list_1.remove(rnd)
 # print(f'Перемешанный список:{list_out}')
+
